@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+hangman_dict=res/words.txt hangman_debug=1 mono bin/Main.exe

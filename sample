@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+hangman_dict=res/words.txt mono bin/Main.exe < res/input_sample.txt

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+bin="bin"
+
+if [[ ! -d $bin ]]; then
+  mkdir $bin
+fi
+
+csc ./src/*.cs /out:$bin/Main.exe

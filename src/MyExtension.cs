@@ -1,3 +1,5 @@
+namespace Io.Huiming.Hangman {
+
 using System.Collections.Generic;
 
 public static class MyExtension {
@@ -7,3 +9,5 @@ public static class MyExtension {
     }
   }
 };
+
+}

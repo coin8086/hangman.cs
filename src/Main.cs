@@ -1,3 +1,5 @@
+namespace Io.Huiming.Hangman {
+
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -86,4 +88,6 @@ TOTAL: {totalScore}
 "
       );
   }
+}
+
 }

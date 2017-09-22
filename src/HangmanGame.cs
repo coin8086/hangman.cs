@@ -1,3 +1,5 @@
+namespace Io.Huiming.Hangman {
+
 using System.Collections.Generic;
 
 public class HangmanGame {
@@ -190,4 +192,6 @@ public class HangmanGame {
   public override string ToString() {
     return GuessedSoFar + "; score=" + CurrentScore + "; status=" + GameStatus;
   }
+}
+
 }

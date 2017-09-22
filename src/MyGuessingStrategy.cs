@@ -1,3 +1,5 @@
+namespace Io.Huiming.Hangman {
+
 using System.Collections.Generic;
 using System.Collections;
 using System;
@@ -271,4 +273,6 @@ public class MyGuessingStrategy : IGuessingStrategy {
   public override string ToString() {
     return "MyGuessingStrategy[" + this.wordset + "]";
   }
+}
+
 }

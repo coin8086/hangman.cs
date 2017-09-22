@@ -1,3 +1,5 @@
+namespace Io.Huiming.Hangman {
+
 /**
  * A Guess that represents guessing a letter for the current Hangman game
  */
@@ -15,4 +17,6 @@ public class GuessLetter : IGuess {
   public override string ToString() {
     return "GuessLetter[" + guess + "]";
   }
+}
+
 }

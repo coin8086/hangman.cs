@@ -62,7 +62,7 @@ class MainProgram {
     while ((word = Console.ReadLine()) != null) {
       word = word.ToUpper();
       if (!dict.Contains(word)) {
-        Console.Error.WriteLine($"Word '{word}' is not in dicitionary!");
+        Console.Error.WriteLine($"Word '{word}' is not in dictionary!");
         continue;
       }
 

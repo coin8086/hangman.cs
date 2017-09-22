@@ -134,8 +134,8 @@ public class MyGuessingStrategy : IGuessingStrategy {
       ISet<char> parsed = new HashSet<char>();
       foreach (char ch in word) {
         if (!guessedLetters.Contains(ch)) {
-          LetterStat stat = this.stat[ch];
-          if (stat != null) {
+          LetterStat stat;
+          if (this.stat.TryGetValue(ch, out stat)) {
             stat.count++;
             if (parsed.Add(ch)) {
               stat.wordCount++;

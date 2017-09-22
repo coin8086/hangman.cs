@@ -56,6 +56,7 @@ class MainProgram {
     int total = 0;
     string word;
 
+    Console.Error.WriteLine("Enter a word:");
     while ((word = Console.ReadLine()) != null) {
       word = word.ToUpper();
       if (!dict.Contains(word)) {

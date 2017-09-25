@@ -8,6 +8,6 @@ public static class MyExtension {
       to.Add(e);
     }
   }
-};
+}
 
 }

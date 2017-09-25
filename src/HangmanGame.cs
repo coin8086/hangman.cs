@@ -11,7 +11,7 @@ public class HangmanGame {
   /**
    * A marker for the letters in the secret words that have not been guessed yet.
    */
-  public static readonly char MYSTERY_LETTER = '-';
+  public const char MYSTERY_LETTER = '-';
 
   /**
    * The word that needs to be guessed

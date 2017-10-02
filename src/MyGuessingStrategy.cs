@@ -204,7 +204,7 @@ public class MyGuessingStrategy : IGuessingStrategy {
 
   private WordSet wordset;
 
-  public MyGuessingStrategy(HangmanGame game, ISet<string> dict) {
+  public MyGuessingStrategy(HangmanGame game, ICollection<string> dict) {
     string pattern = game.GuessedSoFar;
     int len = pattern.Length;
     IList<string> words = new List<string>();

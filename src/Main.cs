@@ -56,27 +56,31 @@ class MainProgram {
     // Run game
     int totalScore = 0;
     int total = 0;
-    string word;
 
-    Console.Error.WriteLine("Enter a word:");
-    while ((word = Console.ReadLine()) != null) {
-      word = word.ToUpper();
-      if (!dict.Contains(word)) {
-        Console.Error.WriteLine($"Word '{word}' is not in dictionary!");
-        continue;
-      }
-
-      if (debug) {
-        Console.Error.WriteLine($"New Game [{word}]");
-      }
-
-      HangmanGame game = new HangmanGame(word, guesses);
-      MyGuessingStrategy strategy = new MyGuessingStrategy(game, dict);
-      int score = Run(game, strategy, debug);
-      totalScore += score;
-      total++;
-      Console.WriteLine($"{word} = {score}");
+    while (true) {
       Console.Error.WriteLine("Enter a word:");
+      string word;
+      if ((word = Console.ReadLine()) != null) {
+        word = word.ToUpper();
+        if (!dict.Contains(word)) {
+          Console.Error.WriteLine($"Word '{word}' is not in dictionary!");
+          continue;
+        }
+
+        if (debug) {
+          Console.Error.WriteLine($"New Game [{word}]");
+        }
+
+        HangmanGame game = new HangmanGame(word, guesses);
+        MyGuessingStrategy strategy = new MyGuessingStrategy(game, dict);
+        int score = Run(game, strategy, debug);
+        totalScore += score;
+        total++;
+        Console.WriteLine($"{word} = {score}");
+      }
+      else {
+        break;
+      }
     }
 
     if (total > 0)

@@ -5,6 +5,24 @@ using System.IO;
 using System.Collections.Generic;
 
 class MainProgram {
+  // Read in dictionary file
+  public static ISet<string> loadDictionary(string file) {
+    ISet<string> dict = new HashSet<string>();
+    try {
+      using (var sr = new StreamReader(file)) {
+        string line;
+        while ((line = sr.ReadLine()) != null) {
+          dict.Add(line.ToUpper());
+        }
+      }
+    }
+    catch (Exception) {
+      Console.Error.WriteLine($"Error when reading dictionary file '{file}'!");
+      Environment.Exit(-1);
+    }
+    return dict;
+  }
+
   public static int Run(HangmanGame game, IGuessingStrategy strategy, bool debug) {
     while(game.GameStatus == HangmanGame.Status.KEEP_GUESSING) {
       if (debug) {
@@ -38,20 +56,7 @@ class MainProgram {
 
     bool debug = Environment.GetEnvironmentVariable("hangman_debug") != null;
 
-    // Read in dictionary file
-    ISet<string> dict = new HashSet<string>();
-    try {
-      using (var sr = new StreamReader(file)) {
-        string line;
-        while ((line = sr.ReadLine()) != null) {
-          dict.Add(line.ToUpper());
-        }
-      }
-    }
-    catch (Exception) {
-      Console.Error.WriteLine($"Error when reading dictionary file '{file}'!");
-      Environment.Exit(-1);
-    }
+    ISet<string> dict = loadDictionary(file);
 
     // Run game
     int totalScore = 0;

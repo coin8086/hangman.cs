@@ -227,7 +227,6 @@ public class MyGuessingStrategy : IGuessingStrategy {
     //counted.
     if (wrongWords.Count > 0) {
       int idx = pattern.IndexOf(HangmanGame.MYSTERY_LETTER);
-      guessed = new HashSet<char>(guessedLetters);
       foreach (string wd in wrongWords) {
         guessed.Add(wd[idx]);
       }
